@@ -11,7 +11,6 @@ const Books_Feed = () => {
         `https://books-api-theo.herokuapp.com/books`
       );
       setBooks(res.data);
-      console.log(res.data);
     };
 
     fetchBooks();
@@ -32,13 +31,16 @@ const Books_Feed = () => {
             publisher,
             pages,
             description,
-            website
+            website,
+            image
           } = book;
+          
+          const releaseDate = published.substring(0, 4)
 
           return (
             <article key={id} className="bg-gray-100 py-5 px-10 rounded-lg sm:px-5">
               <div>
-                <img className="block mx-auto w-1/2" src={title} alt={title} />
+                <img className="block mx-auto w-1/2" src="https://images-na.ssl-images-amazon.com/images/I/51LHTs-4ziL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg" alt={title} />
               </div>
               <div>
                 <h3 className="font-bold my-2 text-2xl">{title}</h3>
@@ -57,6 +59,7 @@ const Books_Feed = () => {
                 <li><span className="font-bold">Website:</span> {website}</li>
                 <li><span className="font-bold">Published:</span> {published}</li>
                 <li><span className="font-bold">ISBN:</span> {isbn}</li>
+                <li><span className="font-bold">Release Date:</span> {releaseDate}</li>
                 
               </ul>
             </article>
