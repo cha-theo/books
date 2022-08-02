@@ -15,3 +15,8 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
+
+
+//    https://www.youtube.com/watch?v=7xL9c39DhjI
+//    https://www.youtube.com/watch?v=5Y5QKfxTErU
+// filtering: https://www.youtube.com/watch?v=MY6ZZIn93V8&t=5s

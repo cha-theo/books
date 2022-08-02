@@ -1,24 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
-const Books_Feed = () => {
-  const [books, setBooks] = useState([]);
+export default function Books_Feed(props){
 
-  useEffect(() => {
-    const fetchBooks = async () => {
-      const res = await axios.get(
-        `https://books-api-theo.herokuapp.com/books`
-      );
-      setBooks(res.data);
-    };
-
-    fetchBooks();
-  }, []);
+  const books = props.books
 
   return (
     <>
-    https://www.youtube.com/watch?v=7xL9c39DhjI
-    https://www.youtube.com/watch?v=5Y5QKfxTErU
       <h1 className="font-bold text-center text-4xl py-5 lg:text-6xl">Books</h1>
       <section className="grid grid-cols-1 gap-10 px-5 sm:grid-col-2 lg:grid-cols-3 xl:grid-col-4">
         {books.map((book) => {
@@ -60,7 +47,7 @@ const Books_Feed = () => {
                 <li><span className="font-bold">Website:</span> {website}</li>
                 <li><span className="font-bold">ISBN:</span> {isbn}</li>
                 <li><span className="font-bold">Release Date:</span> {releaseDate}</li>
-                
+                {props.saySome}
               </ul>
             </article>
           );
@@ -71,4 +58,3 @@ const Books_Feed = () => {
   );
 };
 
-export default Books_Feed;
