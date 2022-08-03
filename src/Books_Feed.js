@@ -63,11 +63,11 @@ export default function Books_Feed(props){
               <ul className="mb-4">
                  <li><span className="font-bold">Publisher:</span> {publisher}</li>
                  <li><span className="font-bold">Pages:</span> {pages}</li>
-                <li><span className="font-bold">Website:</span> {website}</li>
                 <li><span className="font-bold">ISBN:</span> {isbn}</li>
                 <li><span className="font-bold">Release Date:</span> {releaseDate}</li>
-                {props.saySome}
+                <li><a href={website} target="_blank" className="font-bold">Website</a></li>
               </ul>
+              
             </article>
           );
         })}
