@@ -23,7 +23,7 @@ export default function Table(props) {
       <table>
         <tbody>
           <tr>
-            <th>Name</th>
+            <th>Name!</th>
             <th>ISBN</th>
           </tr>
           {search(books).map((book) => (
