@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import "./index.css"
 
 export default function Books_Feed(props){
 
-  const books = props.books
+  const books = props.books;
+
+  const [query, setQuery] = useState("");
+
+  const search = (books) =>{
+    return books.filter(book=> book.title.toLowerCase().includes(query) || 
+    book.isbn.toLowerCase().includes(query) )
+  }
 
   return (
     <>
-      <h1 className="font-bold text-center text-4xl py-5 lg:text-6xl">Books</h1>
-      <section className="grid grid-cols-1 gap-10 px-5 sm:grid-col-2 lg:grid-cols-3 xl:grid-col-4">
-        {books.map((book) => {
+    
+      <h1 className="font-bold text-center text-4xl py-5 lg:text-6xl">Books List</h1>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Search by name or ISBN"
+          className="search-input"
+          onChange={(e) => setQuery(e.target.value)} />
+      </div>
+
+
+      <section className="grid grid-cols-1 gap-10 px-5 sm:grid-col-2 lg:grid-cols-4 xl:grid-col-4">
+        {search(books).map((book) => {
           const {
             id,
             isbn,

@@ -3,7 +3,6 @@ import axios from "axios";
 import Books_Feed from './Books_Feed';
 import Footer from './Footer'
 import Header from './Header'
-import Table from './Table'
 
 function App() {
 
@@ -23,11 +22,9 @@ function App() {
 
   return (
     <div>
-     {/* <Header /> */}
-     <Table books={books}/>
-      <h1>Books app</h1>
+      <Header />
       <Books_Feed books={books}/>
-     {/* <Footer /> */}
+      <Footer />
     </div>
 
     
