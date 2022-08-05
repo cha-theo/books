@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { BrowserRouter} from "react-router-dom"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+     <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
@@ -20,4 +23,4 @@ root.render(
 //    https://www.youtube.com/watch?v=7xL9c39DhjI
 //    https://www.youtube.com/watch?v=5Y5QKfxTErU
 // filtering: https://www.youtube.com/watch?v=MY6ZZIn93V8&t=5s
-// routers https://www.youtube.com/watch?v=Ul3y1LXxzdU
+// routers https://www.youtube.com/watch?v=Ul3y1LXxzdU 4:08
