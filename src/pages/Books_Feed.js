@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"
 import "../index.css"
 
 export default function Books_Feed(props){
 
   const books = props.books;
-
+  console.log(books)
   const [query, setQuery] = useState("");
 
   const search = (books) =>{
@@ -47,7 +48,9 @@ export default function Books_Feed(props){
           return (
             <article key={id} className="bg-gray-100 py-5 px-10 rounded-lg sm:px-5">
               <div>
+                <Link to={`/books/${id}`}>
                 <img className="block mx-auto w-1/2" src={image} alt={title} />
+                </Link>
               </div>
               <div>
                 <h3 className="font-bold my-2 text-2xl">{title}</h3>
@@ -61,8 +64,8 @@ export default function Books_Feed(props){
               </div>
 
               <ul className="mb-4">
-                 <li><span className="font-bold">Publisher:</span> {publisher}</li>
-                 <li><span className="font-bold">Pages:</span> {pages}</li>
+                <li><span className="font-bold">Publisher:</span> {publisher}</li>
+                <li><span className="font-bold">Pages:</span> {pages}</li>
                 <li><span className="font-bold">ISBN:</span> {isbn}</li>
                 <li><span className="font-bold">Release Date:</span> {releaseDate}</li>
                 <li><a href={website} target="_blank" rel="noreferrer" className="font-bold">Website</a></li>

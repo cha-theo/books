@@ -4,6 +4,9 @@ import Books_Feed from "./pages/Books_Feed";
 import Footer from "./Footer";
 import Header from "./Header";
 import Home from "./pages/Home";
+import Books from "./pages/Books"
+import NewBook from "./pages/NewBook"
+import NotFound from "./pages/NotFound";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -18,15 +21,17 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/books" element={<Books_Feed books={books} />}/>
+        <Route path="/books/:id" element={<Books books={books} />}/>
+        <Route path="/newbook" element={<NewBook books={books} />}/>
+        <Route path="*" element={<NotFound />}/>
       </Routes>
-
       <Footer />
-    </div>
+    </>
   );
 }
 
