@@ -9,7 +9,7 @@ export default function Books_Feed(props){
 
   const search = (books) =>{
     return books.filter(book=> book.title.toLowerCase().includes(query) || 
-    book.isbn.toLowerCase().includes(query) )
+    book.id.toString().includes(query) )
   }
 
   return (
@@ -65,7 +65,7 @@ export default function Books_Feed(props){
                  <li><span className="font-bold">Pages:</span> {pages}</li>
                 <li><span className="font-bold">ISBN:</span> {isbn}</li>
                 <li><span className="font-bold">Release Date:</span> {releaseDate}</li>
-                <li><a href={website} target="_blank" className="font-bold">Website</a></li>
+                <li><a href={website} target="_blank" rel="noreferrer" className="font-bold">Website</a></li>
               </ul>
               
             </article>
