@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     const fetchBooks = async () => {
-      const res = await axios.get(`https://books-api-theo.herokuapp.com/books`);
+      const res = await axios.get(`https://new-books-api-theo.herokuapp.com/books`);
       setBooks(res.data);
     };
     fetchBooks();
