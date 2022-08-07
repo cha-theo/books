@@ -9,7 +9,7 @@ export default function Books(props) {
   const {bookid} = useParams()
   const thisBook = books.find(book => book.id.toString() === bookid)
  
-  return bookid > books.length - 1 ? (
+  return thisBook === undefined ? (
     <NotFound />
   ) : (
     <div>
