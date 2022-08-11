@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Books from "./pages/Books"
 import NewBook from "./pages/NewBook"
 import NotFound from "./pages/NotFound";
+import EditBooks from "./pages/EditBooks";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/books" element={<Books_Feed books={books} />}/>
         <Route path="/books/:bookid" element={<Books books={books} />}/>
         <Route path="/newbook" element={<NewBook books={books} />}/>
+        <Route path="/editbooks" element={<EditBooks books={books} />}/>
         <Route path="*" element={<NotFound />}/>
       </Routes>
       <Footer />
