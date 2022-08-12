@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "semantic-ui-react";
 import axios from "axios";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export default function EditBooks() {
   const [booksData, setBooksData] = useState([]);
@@ -14,35 +14,47 @@ export default function EditBooks() {
       });
   });
 
-  const setData = (id, isbn, image, title, subtitle,author, published, publisher, pages, description, website) =>{
-    localStorage.setItem('ID', id)
-    localStorage.setItem('ISBN', isbn)
-    localStorage.setItem('Title', title)
-    localStorage.setItem('Subtitle', subtitle)
-    localStorage.setItem('Image', image)
-    localStorage.setItem('Author', author)
-    localStorage.setItem('Published', published)
-    localStorage.setItem('Publisher', publisher)
-    localStorage.setItem('Pages', pages)
-    localStorage.setItem('Description', description)
-    localStorage.setItem('Website', website)
-  }
+  const setData = (
+    id,
+    isbn,
+    image,
+    title,
+    subtitle,
+    author,
+    published,
+    publisher,
+    pages,
+    description,
+    website
+  ) => {
+    localStorage.setItem("ID", id);
+    localStorage.setItem("ISBN", isbn);
+    localStorage.setItem("Title", title);
+    localStorage.setItem("Subtitle", subtitle);
+    localStorage.setItem("Image", image);
+    localStorage.setItem("Author", author);
+    localStorage.setItem("Published", published);
+    localStorage.setItem("Publisher", publisher);
+    localStorage.setItem("Pages", pages);
+    localStorage.setItem("Description", description);
+    localStorage.setItem("Website", website);
+  };
 
   const getData = () => {
     axios
-    .get("https://new-books-api-theo.herokuapp.com/books")
-    .then((getBooks) => {
-      setBooksData(getBooks.data);
-    });
-  }
+      .get("https://new-books-api-theo.herokuapp.com/books")
+      .then((getBooks) => {
+        setBooksData(getBooks.data);
+      });
+  };
 
-const onDelete = (id) =>{
-    axios.delete(`https://new-books-api-theo.herokuapp.com/books/${id}`)
-    .then(() => {
+  const onDelete = (id) => {
+    axios
+      .delete(`https://new-books-api-theo.herokuapp.com/books/${id}`)
+      .then(() => {
         getData();
-    })
-}
-
+      });
+  };
 
   return (
     <Table celled>
@@ -64,13 +76,31 @@ const onDelete = (id) =>{
               <Table.Cell>{book.title}</Table.Cell>
               <Table.Cell>{book.author}</Table.Cell>
               <Table.Cell>
-                <Link to = '/update'>
-                <Button onClick={() => setData(book.id, book.isbn, book.image, book.title, book.subtitle, book.author, book.published, book.publisher, book.pages, book.description, book.website)}>Update</Button>
+                <Link to="/update">
+                  <Button
+                    onClick={() =>
+                      setData(
+                        book.id,
+                        book.isbn,
+                        book.image,
+                        book.title,
+                        book.subtitle,
+                        book.author,
+                        book.published,
+                        book.publisher,
+                        book.pages,
+                        book.description,
+                        book.website
+                      )
+                    }
+                  >
+                    Update
+                  </Button>
                 </Link>
               </Table.Cell>
               <Table.Cell>
-                <Link to = '/editbooks'>
-                <Button onClick={() => onDelete(book.id)}>Delete</Button>
+                <Link to="/editbooks">
+                  <Button onClick={() => onDelete(book.id)}>Delete</Button>
                 </Link>
               </Table.Cell>
             </Table.Row>
@@ -78,8 +108,5 @@ const onDelete = (id) =>{
         })}
       </Table.Body>
     </Table>
-
-
-
   );
 }

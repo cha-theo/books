@@ -1,18 +1,29 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import NotFound from "../pages/NotFound";
-import "../index.css";
-
+import { Button, Card, Container, Row, Col } from "react-bootstrap";
 
 export default function Books(props) {
   const books = props.books;
-  const {bookid} = useParams()
-  const thisBook = books.find(book => book.id.toString() === bookid)
- 
+  const { bookid } = useParams();
+  const thisBook = books.find((book) => book.id.toString() === bookid);
+
   return thisBook === undefined ? (
     <NotFound />
   ) : (
     <div>
+      <Container>
+        <Row>
+          <Col>
+          </Col>
+          <Col md="auto"><h3>{thisBook.title}</h3>
+          <Row>
+        <Col>1 of 1</Col>
+      </Row>
+          </Col>
+        </Row>
+      </Container>
+
       <article
         key={thisBook.id}
         className="bg-gray-100 py-5 px-10 rounded-lg sm:px-5"
@@ -39,8 +50,7 @@ export default function Books(props) {
 
         <ul className="mb-4">
           <li>
-            <span className="font-bold">Publisher:</span>{" "}
-            {thisBook.publisher}
+            <span className="font-bold">Publisher:</span> {thisBook.publisher}
           </li>
           <li>
             <span className="font-bold">Pages:</span> {thisBook.pages}
@@ -53,8 +63,7 @@ export default function Books(props) {
             {thisBook.releaseDate}
           </li>
           <li>
-            <a
-              href={thisBook.website}
+            <a            href={thisBook.website}
               target="_blank"
               rel="noreferrer"
               className="font-bold"
@@ -68,9 +77,8 @@ export default function Books(props) {
   );
 }
 
-
 // export default function Books(props) {
-//   const books = props.books;  
+//   const books = props.books;
 
 //   const { bookid } = useParams();
 

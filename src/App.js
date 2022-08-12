@@ -4,20 +4,22 @@ import Books_Feed from "./pages/Books_Feed";
 import Footer from "./Footer";
 import Header from "./Header";
 import Home from "./pages/Home";
-import Books from "./pages/Books"
-import NewBook from "./pages/NewBook"
+import Books from "./pages/Books";
+import NewBook from "./pages/NewBook";
 import NotFound from "./pages/NotFound";
 import EditBooks from "./pages/EditBooks";
 import Update from "./pages/Update";
 import { Route, Routes } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
     const fetchBooks = async () => {
-      const res = await axios.get(`https://new-books-api-theo.herokuapp.com/books`);
+      const res = await axios.get(
+        `https://new-books-api-theo.herokuapp.com/books`
+      );
       setBooks(res.data);
     };
     fetchBooks();
@@ -27,13 +29,13 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/books" element={<Books_Feed books={books} />}/>
-        <Route path="/books/:bookid" element={<Books books={books} />}/>
-        <Route path="/newbook" element={<NewBook books={books} />}/>
-        <Route path="/editbooks" element={<EditBooks books={books} />}/>
-        <Route path="/update" element={<Update />}/>
-        <Route path="*" element={<NotFound />}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/books" element={<Books_Feed books={books} />} />
+        <Route path="/books/:bookid" element={<Books books={books} />} />
+        <Route path="/newbook" element={<NewBook books={books} />} />
+        <Route path="/editbooks" element={<EditBooks books={books} />} />
+        <Route path="/update" element={<Update />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
