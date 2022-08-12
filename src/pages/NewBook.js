@@ -175,7 +175,7 @@ export default function NewBook() {
         <Col>
         </Col>
         <Col>
-        <Button variant="success" size="lg" type="submit"  onClick={sendDataToAPI}>
+        <Button className="float-end" variant="success" size="lg" type="submit"  onClick={sendDataToAPI}>
         Add new Book
       </Button>
         </Col>
