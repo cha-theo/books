@@ -8,7 +8,9 @@ import Books from "./pages/Books"
 import NewBook from "./pages/NewBook"
 import NotFound from "./pages/NotFound";
 import EditBooks from "./pages/EditBooks";
+import Update from "./pages/Update";
 import { Route, Routes } from "react-router-dom";
+
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -30,6 +32,7 @@ function App() {
         <Route path="/books/:bookid" element={<Books books={books} />}/>
         <Route path="/newbook" element={<NewBook books={books} />}/>
         <Route path="/editbooks" element={<EditBooks books={books} />}/>
+        <Route path="/update" element={<Update />}/>
         <Route path="*" element={<NotFound />}/>
       </Routes>
       <Footer />
