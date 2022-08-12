@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Table, Button } from "semantic-ui-react";
+import { Table, Button, Container, Col, Row } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -57,27 +57,33 @@ export default function EditBooks() {
   };
 
   return (
-    <Table celled>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>ISBN</Table.HeaderCell>
-          <Table.HeaderCell>Title</Table.HeaderCell>
-          <Table.HeaderCell>Author</Table.HeaderCell>
-          <Table.HeaderCell>Update</Table.HeaderCell>
-          <Table.HeaderCell>Delete</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-
-      <Table.Body>
+    <Container>
+      <Row>
+        <Col>
+    <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ISBN</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
         {booksData.map((book) => {
           return (
-            <Table.Row key={book.id}>
-              <Table.Cell>{book.isbn}</Table.Cell>
-              <Table.Cell>{book.title}</Table.Cell>
-              <Table.Cell>{book.author}</Table.Cell>
-              <Table.Cell>
+            <tr key={book.id}>
+              <td>{book.id}</td>
+              <td>{book.isbn}</td>
+              <td>{book.title}</td>
+              <td>{book.author}</td>
+              <td>
+                {" "}
                 <Link to="/update">
                   <Button
+                    variant="success"
                     onClick={() =>
                       setData(
                         book.id,
@@ -97,16 +103,20 @@ export default function EditBooks() {
                     Update
                   </Button>
                 </Link>
-              </Table.Cell>
-              <Table.Cell>
-                <Link to="/editbooks">
-                  <Button onClick={() => onDelete(book.id)}>Delete</Button>
-                </Link>
-              </Table.Cell>
-            </Table.Row>
+              </td>
+              <td>
+                  <Button variant="danger" 
+                    onClick={() => onDelete(book.id)}>
+                    Delete
+                  </Button>
+              </td>
+            </tr>
           );
         })}
-      </Table.Body>
+      </tbody>
     </Table>
+    </Col>
+    </Row>
+        </Container>
   );
 }

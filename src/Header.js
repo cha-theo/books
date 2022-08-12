@@ -7,7 +7,7 @@ export default function Header() {
      
     <>
     <Navbar bg="light" variant="light">
-        <Container>
+        <Container fluid>
           <Navbar.Brand href="/">Bookstore</Navbar.Brand>
           <Nav className="justify-content-end">
             <Nav.Link href="/books">Book List</Nav.Link>
