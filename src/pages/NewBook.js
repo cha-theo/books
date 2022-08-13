@@ -15,10 +15,11 @@ export default function NewBook() {
   const [pages, setPages] = useState("");
   const [description, setDescription] = useState("");
   const [website, setWebsite] = useState("");
+  const [form, setForm] = useState({});
+  const [errors, setErrors] = useState({});
 
   const sendDataToAPI = () => {
-    axios
-      .post("https://new-books-api-theo.herokuapp.com/books", {
+    axios.post("https://new-books-api-theo.herokuapp.com/books", {
         isbn,
         image,
         title,
@@ -36,6 +37,7 @@ export default function NewBook() {
   };
 
   return (
+    <main className="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
     <Container>
       <Row>
         <Col>
@@ -130,8 +132,6 @@ export default function NewBook() {
             </Form.Group>
 
 
-
-
             <Form.Group className="mb-3" controlId="bpages">
               <Form.Label>Pages</Form.Label>
               <Form.Control 
@@ -181,6 +181,8 @@ export default function NewBook() {
         </Col>
       </Row>
     </Container>
+</main>
+
 
     // <Form>
     //   <Form.Field>

@@ -57,6 +57,7 @@ export default function EditBooks() {
   };
 
   return (
+    <main className="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
     <Container>
       <Row>
         <Col>
@@ -118,5 +119,6 @@ export default function EditBooks() {
     </Col>
     </Row>
         </Container>
+        </main>
   );
 }

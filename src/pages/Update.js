@@ -52,6 +52,7 @@ export default function Update() {
 
   return (
     
+    <main className="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
     
     <Container>
     <Row>
@@ -205,7 +206,8 @@ export default function Update() {
     </Button>
       </Col>
     </Row>
-  </Container>   
+  </Container>  
+  </main> 
     
     
     // <Form>
