@@ -31,7 +31,7 @@ export default function NewBook() {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
+// gets the data from each field and sets it to each value
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
@@ -43,7 +43,7 @@ export default function NewBook() {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
   };
-
+// checks if there are no errors in submit and if its true sends data to APi
   useEffect(() => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -54,7 +54,7 @@ export default function NewBook() {
 
   const validate = (values) => {
     const errors = {};
-
+// form validations for each field
     if (!values.title) {
       errors.title = "Title is required!";
     } else if (values.title.length > 120) {

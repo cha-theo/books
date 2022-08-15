@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function EditBooks() {
   const [booksData, setBooksData] = useState([]);
-
+//fetches data from API
   useEffect(() => {
     axios
       .get("https://new-books-api-theo.herokuapp.com/books")
@@ -27,6 +27,7 @@ export default function EditBooks() {
     description,
     website
   ) => {
+    //assignes values to local data
     localStorage.setItem("ID", id);
     localStorage.setItem("ISBN", isbn);
     localStorage.setItem("Title", title);
@@ -47,7 +48,7 @@ export default function EditBooks() {
         setBooksData(getBooks.data);
       });
   };
-
+//delete selectes book with id param
   const onDelete = (id) => {
     axios
       .delete(`https://new-books-api-theo.herokuapp.com/books/${id}`)
@@ -57,6 +58,7 @@ export default function EditBooks() {
   };
 
   return (
+    // creates table with book info and delete/update buttons
     <main className="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
     <Container>
       <Row>
@@ -83,6 +85,7 @@ export default function EditBooks() {
               <td>
                 {" "}
                 <Link to="/update">
+                  {/* sets data with setData function to local storage */}
                   <Button
                     variant="success"
                     onClick={() =>

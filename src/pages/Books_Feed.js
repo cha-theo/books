@@ -7,7 +7,7 @@ import { Card, Button }  from 'react-bootstrap';
 export default function Books_Feed(){
 
   const [booksData, setBooksData] = useState([]);
-
+//get data from API
   useEffect(() => {
     axios
       .get("https://new-books-api-theo.herokuapp.com/books")
@@ -18,7 +18,7 @@ export default function Books_Feed(){
 
   
   const [query, setQuery] = useState("");
-
+  //search title and isbn
   const search = (books) =>{
     return books.filter(book=> book.title.toLowerCase().includes(query) || 
     book.isbn.toString().includes(query))
@@ -29,7 +29,7 @@ export default function Books_Feed(){
     
       <h1 className="font-bold text-center text-4xl py-5 lg:text-6xl">Search to find your new book</h1>
       <h4 className="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h4>
-
+     {/* onChange changes the value of query with setQuery and uses it at search function */}
       <div className="search_input">
         <input
           type="text"
@@ -38,7 +38,7 @@ export default function Books_Feed(){
           onChange={(e) => setQuery(e.target.value)} />
       </div>
 
-
+      
       <section className="grid grid-cols-1 gap-20 px-5 sm:grid-col-2 lg:grid-cols-4 xl:grid-col-4">
         {search(booksData).map((book) => {
           const {
@@ -56,7 +56,7 @@ export default function Books_Feed(){
           } = book;
           
           const releaseDate = published.substring(0, 4)
-
+// with map function creates books from data
           return (
             <Card key={id}>
               <Link to={`/books/${id}`}>

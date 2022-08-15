@@ -16,7 +16,7 @@ export default function Update() {
   const [pages, setPages] = useState("");
   const [description, setDescription] = useState("");
   const [website, setWebsite] = useState("");
-
+// gets data from each book
   const sendDataToAPI = () => {
     axios
       .put(`https://new-books-api-theo.herokuapp.com/books/${ID}`, {
@@ -35,6 +35,7 @@ export default function Update() {
         history("/editbooks");
       });
   };
+  //assigns data from local storage
 
   useEffect(() => {
     setID(localStorage.getItem("ID"));

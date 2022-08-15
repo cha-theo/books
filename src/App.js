@@ -14,7 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [books, setBooks] = useState([]);
-
+// gets data from all books to use it in components
   useEffect(() => {
     const fetchBooks = async () => {
       const res = await axios.get(

@@ -2,12 +2,12 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import NotFound from "../pages/NotFound";
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
-
+// gets data via props for each book
 export default function Books(props) {
   const books = props.books;
   const { bookid } = useParams();
   const thisBook = books.find((book) => book.id.toString() === bookid);
-
+// creates layout for single book
   return thisBook === undefined ? (
     <NotFound />
   ) : (
