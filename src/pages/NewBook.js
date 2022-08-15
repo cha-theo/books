@@ -102,7 +102,7 @@ export default function NewBook() {
     }else if (values.description.length > 512) {
       errors.description = "Description must be less than 512 characters";
     }else if (values.description[0].toUpperCase() != values.description[0]) {
-      errors.description = "LOL";
+      errors.description = "The description must start with a capital letter";
     }
     if (!values.website) {
       errors.website = "Website is required!";
