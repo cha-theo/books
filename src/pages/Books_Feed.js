@@ -58,7 +58,7 @@ export default function Books_Feed(){
           const releaseDate = published.substring(0, 4)
 
           return (
-            <Card>
+            <Card key={id}>
               <Link to={`/books/${id}`}>
             <Card.Img variant="top" max src={image} />
             </Link>
