@@ -53,7 +53,8 @@ export default function Update() {
   return (
     
     <main className="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
-    
+      <h2>Edit Book</h2>
+      <hr></hr>
     <Container>
     <Row>
       <Col>
@@ -210,110 +211,5 @@ export default function Update() {
   </main> 
     
     
-    // <Form>
-    //   <Form.Field>
-    //     <label>Title</label>
-    //     <input
-    //       name="btitle"
-    //       value={title}
-    //       onChange={(e) => setTitle(e.target.value)}
-    //       placeholder="Title"
-    //     />
-    //   </Form.Field>
-
-    //   <Form.Field>
-    //     <label>Subtitle</label>
-    //     <input
-    //       name="bsubtitle"
-    //       value={subtitle}
-    //       onChange={(e) => setSubtitle(e.target.value)}
-    //       placeholder="Subtitle"
-    //     />
-    //   </Form.Field>
-
-    //   <Form.Field>
-    //     <label>Author</label>
-    //     <input
-    //       name="bauthor"
-    //       value={author}
-    //       onChange={(e) => setAuthor(e.target.value)}
-    //       placeholder="Author"
-    //     />
-    //   </Form.Field>
-
-    //   <Form.Field>
-    //     <label>ISBN</label>
-    //     <input
-    //       name="bisbn"
-    //       value={isbn}
-    //       onChange={(e) => setISBN(e.target.value)}
-    //       placeholder="ISBN"
-    //     />
-    //   </Form.Field>
-
-    //   <Form.Field>
-    //     <label>Published</label>
-    //     <input
-    //       name="bpublished"
-    //       value={published.substring(0, 4)}
-    //       onChange={(e) => setPublished(e.target.value)}
-    //       placeholder="Published"
-    //     />
-    //   </Form.Field>
-
-    //   <Form.Field>
-    //     <label>Publisher</label>
-    //     <input
-    //       name="bpublisher"
-    //       value={publisher}
-    //       onChange={(e) => setPublisher(e.target.value)}
-    //       placeholder="Publisher"
-    //     />
-    //   </Form.Field>
-
-    //   <Form.Field>
-    //     <label>Image</label>
-    //     <input
-    //       name="bimage"
-    //       value={image}
-    //       onChange={(e) => setImage(e.target.value)}
-    //       placeholder="Image"
-    //     />
-    //   </Form.Field>
-
-    //   <Form.Field>
-    //     <label>Pages</label>
-    //     <input
-    //       name="bpages"
-    //       value={pages}
-    //       onChange={(e) => setPages(e.target.value)}
-    //       placeholder="Pages"
-    //     />
-    //   </Form.Field>
-
-    //   <Form.Field>
-    //     <label>Description</label>
-    //     <input
-    //       name="bdescription"
-    //       value={description}
-    //       onChange={(e) => setDescription(e.target.value)}
-    //       placeholder="Description"
-    //     />
-    //   </Form.Field>
-
-    //   <Form.Field>
-    //     <label>Website</label>
-    //     <input
-    //       name="bwebsite"
-    //       value={website}
-    //       onChange={(e) => setWebsite(e.target.value)}
-    //       placeholder="Website"
-    //     />
-    //   </Form.Field>
-
-    //   <Button type="submit" onClick={sendDataToAPI}>
-    //     Update
-    //   </Button>
-    // </Form>
   );
 }
