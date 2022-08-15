@@ -12,18 +12,6 @@ export default function Books(props) {
     <NotFound />
   ) : (
     <div>
-      <Container>
-        <Row>
-          <Col>
-          </Col>
-          <Col md="auto"><h3>{thisBook.title}</h3>
-          <Row>
-        <Col>1 of 1</Col>
-      </Row>
-          </Col>
-        </Row>
-      </Container>
-
       <article
         key={thisBook.id}
         className="bg-gray-100 py-5 px-10 rounded-lg sm:px-5"

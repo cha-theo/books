@@ -22,7 +22,7 @@ export default function Books_Feed(){
 
   const search = (books) =>{
     return books.filter(book=> book.title.toLowerCase().includes(query) || 
-    book.id.toString().includes(query) )
+    book.isbn.toString().includes(query))
   }
 
   return (
